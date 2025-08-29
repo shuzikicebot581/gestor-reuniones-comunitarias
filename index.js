@@ -19,8 +19,15 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 app.use(cors());
 app.use(express.json());
 
+// Ruta principal de la API
 app.get('/', (req, res) => {
   res.send('API de Gestor de Reuniones Comunitarias');
+});
+
+// Middleware para manejar errores
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Algo salió mal!');
 });
 
 app.listen(PORT, () => {
