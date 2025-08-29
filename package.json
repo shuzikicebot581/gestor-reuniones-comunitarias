@@ -19,6 +19,5 @@
     "nodemon": "^2.0.7"
   },
   "author": "Nombre del autor - sustituir con tu nombre real",
-  "license": "MIT",
-  // Este proyecto es una aplicación para mejorar la gestión de reuniones en comunidades.
+  "license": "MIT"
 }
