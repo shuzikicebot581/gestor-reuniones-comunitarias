@@ -11,7 +11,10 @@ const PORT = process.env.PORT || 3000;
 // Conexión a MongoDB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Conectado a MongoDB'))
-  .catch(err => console.log(err));
+  .catch(err => {
+    console.error('Error de conexión a MongoDB:', err);
+    process.exit(1); // Terminar el proceso si no se puede conectar a MongoDB
+  });
 
 app.use(cors());
 app.use(express.json());
